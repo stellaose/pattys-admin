@@ -66,4 +66,6 @@ export default tseslint.config([
     },
   },
 ])
-```
+
+# pattys-admin
+Admin Dashboard for patty e-commerce
