@@ -1,10 +1,10 @@
 import { useApi } from ".";
-import { State } from "@models/application/state";
-import { useAppStore } from "@store/useStore";
-import { useCallback } from "react";
+// import { State } from "@models/application/state";
+// import { useAppStore } from "@store/useStore";
+// import { useCallback } from "react";
 import { pattysAPI } from "@/config";
-import { Notify } from "@components/General";
-import { useGetDataOnClickMutation, usePostDataMutation } from "@/stores";
+// import { Notify } from "@components/General";
+// import { useGetDataOnClickMutation, usePostDataMutation } from "@/stores";
 
 
 export const useAuth = () => {
