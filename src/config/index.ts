@@ -1,0 +1,1 @@
+export const pattysAPI = import.meta.env.VITE_APP_PATTYS_API_DOMAIN;

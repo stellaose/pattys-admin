@@ -14,7 +14,7 @@ export const baseQueryWithReauth: (baseQuery: BaseQueryType) => BaseQueryType =
       }
       return result;
     } catch (error) {
-      Notify('Error occurred on the server. Please try again', false);
+      Notify('Error occurred on the server. Please try again', 'error');
     }
   };
 
@@ -26,8 +26,6 @@ export const baseQuery = fetchBaseQuery({
     const token = localStorage.getItem('***');
     if (token) {
       headers.set('Authorization', `Bearer ${token}`);
-    //   headers.set('x_token_check', `973f5d8c724716d82a`);
-    //   headers.set('x-merchant-id', getMerchantId());
     }
     return headers;
   },

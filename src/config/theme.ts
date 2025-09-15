@@ -12,6 +12,7 @@ export const getThemeConfig = (): ThemeConfig | undefined => {
         colorBgContainer: "#F4F6FA",
         colorBorder: "white",
         fontFamily: "Raleway",
+      
       },
       Select: {
         colorBgContainer: "#F4F6FA",
