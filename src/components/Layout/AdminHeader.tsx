@@ -1,5 +1,5 @@
 import React from "react";
 
-export const AdminHeader = () => {
+export const AdminHeader:React.FC = () => {
   return <div>AdminHeader</div>;
 };

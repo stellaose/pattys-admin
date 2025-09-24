@@ -31,34 +31,7 @@ export const DashboardLayout = () => {
     setCollapse(!collapse);
   };
 
-  // useEffect(() => {
-  //   getAuthPayload();
-  // }, []);
-
-  // useEffect(() => {
-  //   // This will run whenever getAuthPayloadData changes
-
-  //   if (getAuthPayloadData?.data?.payload) {
-  //     const { admin_permissions, role_type } = getAuthPayloadData.data.payload;
-
-  //     if (role_type !== 'SADM') {
-  //       // Filter for regular users
-  //       const newMenuItem = menuItems.filter((menuItem) => {
-  //         if (menuItem?.title === 'Dashboard' || menuItem?.title === 'Settings')
-  //           return menuItem?.title;
-  //         return (
-  //           admin_permissions &&
-  //           admin_permissions[menuItem?.title?.toLowerCase()] &&
-  //           admin_permissions[menuItem.title.toLowerCase()].includes('read')
-  //         );
-  //       });
-  //       setUpdatedItems(newMenuItem);
-  //     } else {
-  //       // For super admins show all items
-  //       setUpdatedItems(menuItems);
-  //     }
-  //   }
-  // }, [getAuthPayloadData]);
+ 
 
   return (
     <section
