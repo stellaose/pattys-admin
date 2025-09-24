@@ -14,9 +14,10 @@ export const useApi = () => {
   const pattysAPI = import.meta.env.VITE_APP_PATTYS_API_DOMAIN;
 
   const setData = useCallback(() => {
-    if (postDataResult.data && postDataResult.data?.data) {
-      if (state?.apiCallBack) state?.apiCallBack(postDataResult?.data?.data);
+    if (postDataResult.data || postDataResult.data?.data) {
+      if (state?.apiCallBack) state?.apiCallBack(postDataResult?.data);
       if (state?.resetField) state?.resetField();
+      console.log(postDataResult?.data?.message);
       Notify(postDataResult.data?.message, "success");
     }
     if (postDataResult.error) {

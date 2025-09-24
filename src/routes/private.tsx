@@ -7,7 +7,7 @@ const { DashboardRoutes } = lazyImport(
 
 export const privateRoutes = [
   {
-    path: "/dashboard/*",
+    path: "/admin/*",
     element: <DashboardRoutes />,
     errorElement: <NotFound/>
   },

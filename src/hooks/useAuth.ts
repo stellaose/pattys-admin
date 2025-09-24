@@ -1,15 +1,11 @@
+import {useCallback} from 'react'
 import { useApi } from ".";
-// import { State } from "@models/application/state";
-// import { useAppStore } from "@store/useStore";
-// import { useCallback } from "react";
 import { pattysAPI } from "@/config";
-// import { Notify } from "@components/General";
-// import { useGetDataOnClickMutation, usePostDataMutation } from "@/stores";
-
+import { useNavigate } from "react-router-dom";
 
 export const useAuth = () => {
-  const { postData, postDataResult } = useApi();
-  // const [postData, postDataResult] = usePostDataMutation();
+  const { postData, postDataResult, getData, getDataResult } = useApi();
+  const navigate = useNavigate();
 
   const login = async (payload: object | any) => {
     const response: any = await postData({
@@ -17,20 +13,22 @@ export const useAuth = () => {
       request: payload,
     });
 
-    console.log(response, response?.error, response?.status,"error" in response);
-  //  if(response && "data" in response) {
-  //     Notify(response?.data?.message, "success");
-  //   }
-  //   if (response && "error" in response) {
-  //     Notify(
-  //       response?.error?.data?.message || response?.error?.message,
-  //       "error"
-  //     );
-  //   } 
+    if (response && "data" in response) {
+      localStorage.setItem("***", response?.data?.token);
+      navigate("/admin/dashboard");
+    } else return;
   };
+
+  const getAdmin = useCallback(() => {
+    getData({
+      url: `${pattysAPI}/auth/me`,
+    });
+  }, [getData])
 
   return {
     login,
     postDataResult,
+    getAdmin,
+    getDataResult,
   };
 };

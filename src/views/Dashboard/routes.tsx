@@ -7,6 +7,7 @@ import {
   Orders,
   Products,
   Reports,
+  Settings
 } from ".";
 
 export const DashboardRoutes = () => {
@@ -14,11 +15,12 @@ export const DashboardRoutes = () => {
     <Routes>
       <Route element={<DashboardLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Customers />} />
-        <Route path="/dashboard" element={<Products />} />
-        <Route path="/dashboard" element={<Orders />} />
-        <Route path="/dashboard" element={<Administrators />} />
-        <Route path="/dashboard" element={<Reports />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/administrators" element={<Administrators />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/settings" element={<Settings />} />
       </Route>
     </Routes>
   );

@@ -63,6 +63,7 @@ export const Login: React.FC = () => {
           isLoading={postDataResult.isLoading}
         />
       </Form>
+    <p className='text-sm font-medium hover:underline text-center mt-3'>Forget Password?</p>
     </div>
   );
 };

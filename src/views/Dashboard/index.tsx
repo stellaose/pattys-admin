@@ -5,3 +5,4 @@ export * from "./Orders";
 export * from "./Products";
 export * from "./Reports";
 export * from './routes'
+export * from './Settings'
