@@ -1,26 +1,161 @@
 @import "tailwindcss";
+@import "./theme.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/fonts/Epilogue/Epilogue-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/fonts/Epilogue/Epilogue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/fonts/Epilogue/Epilogue-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/fonts/Epilogue/Epilogue-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/fonts/Epilogue/Epilogue-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-Italic.ttf");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-MediumItalic.ttf");
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-SemiBoldItalic.ttf");
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/Lora-BoldItalic.ttf");
+  font-style: italic;
+  font-weight: 700;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lora", serif;
+}
+
+.ant-form,
+.ant-input::placeholder {
+  font-family: Arial, sans-serif;
+}
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+
+.ant-input-outlined,
+.ant-select-outlined {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  border: 1px solid var(--color-white-150);
+}
+
+.ant-input-outlined:focus-within,
+.ant-input-outlined:focus,
+.ant-input-outlined:hover,
+.ant-select-outlined:focus-within,
+.ant-select-outlined:focus,
+.ant-select-outlined:hover {
+  border-color: var(--color-grey-100);
+  box-shadow: 0 0 0 2px rgba(235, 141, 65, 0.1);
+  background-color: var(--color-white);
+}
+
+.ant-otp {
+  display: flex;
+  justify-content: space-between;
+  column-gap: unset;
+  width: 100%;
+}
+
+.ant-otp .ant-otp-input {
+  height: 54px !important;
+  width: 54px !important;
+}
+
+.ant-otp .ant-otp-input-wrapper,
+.ant-otp .ant-otp-input-wrapper .ant-otp-mask-input.ant-input-outlined {
+  border: 1px solid var(--color-purple-100);
+  border-radius: 12px;
+}
+
+.auth {
+  background-image: url("../assets/images/auth-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-bg {
+  background-image: url("../assets/svg/admin-form-card.svg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

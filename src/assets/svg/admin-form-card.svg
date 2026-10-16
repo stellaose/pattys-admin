@@ -1,0 +1,16 @@
+<svg width="700" height="1000" viewBox="0 0 700 1000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="edge" x1="700" y1="0" x2="420" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4527A0" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="card"><rect width="700" height="1000" rx="36"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)">
+  <rect width="700" height="1000" rx="36" fill="#FFFFFF"/>
+  <path d="M700 0 V150 C640 150 560 120 520 60 C500 30 470 8 430 0 Z" fill="#ECE7FB"/>
+  <path d="M700 40 C600 60 540 20 500 0" stroke="url(#edge)" stroke-width="2"/>
+  <path d="M700 90 C590 110 510 60 470 0" stroke="url(#edge)" stroke-width="2" opacity="0.7"/>
+  <circle cx="640" cy="70" r="6" fill="#4527A0"/>
+  </g>
+</svg>

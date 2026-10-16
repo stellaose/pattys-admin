@@ -1,0 +1,83 @@
+<svg width="560" height="440" viewBox="0 0 560 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="560" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECE7FB"/>
+      <stop offset="1" stop-color="#D9CFF7"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#6A4FD1"/>
+      <stop offset="1" stop-color="#4527A0"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#4527A0" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#4527A0" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#2F1A73" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!-- backdrop -->
+  <rect x="20" y="40" width="500" height="380" rx="72" fill="url(#bg)"/>
+  <circle cx="470" cy="70" r="46" fill="#B9A8EF" opacity="0.45"/>
+  <circle cx="70" cy="380" r="30" fill="#7B61D9" opacity="0.25"/>
+
+  <!-- main window -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="80" width="400" height="280" rx="22" fill="#FFFFFF"/>
+  </g>
+  <rect x="70" y="80" width="96" height="280" rx="22" fill="#1A1433"/>
+  <rect x="144" y="80" width="22" height="280" fill="#1A1433"/>
+  <circle cx="96" cy="108" r="9" fill="#7B61D9"/>
+  <rect x="86" y="140" width="62" height="12" rx="6" fill="#4527A0"/>
+  <rect x="86" y="166" width="50" height="8" rx="4" fill="#FFFFFF" opacity="0.28"/>
+  <rect x="86" y="186" width="56" height="8" rx="4" fill="#FFFFFF" opacity="0.28"/>
+  <rect x="86" y="206" width="44" height="8" rx="4" fill="#FFFFFF" opacity="0.28"/>
+  <rect x="86" y="226" width="52" height="8" rx="4" fill="#FFFFFF" opacity="0.28"/>
+
+  <!-- header -->
+  <rect x="186" y="102" width="110" height="12" rx="6" fill="#1A1433"/>
+  <circle cx="446" cy="108" r="11" fill="#4527A0"/>
+
+  <!-- stat tiles -->
+  <rect x="186" y="132" width="84" height="56" rx="12" fill="#F6F3FE"/>
+  <rect x="198" y="146" width="36" height="7" rx="3.5" fill="#B9A8EF"/>
+  <rect x="198" y="162" width="52" height="12" rx="6" fill="#4527A0"/>
+  <rect x="282" y="132" width="84" height="56" rx="12" fill="#F6F3FE"/>
+  <rect x="294" y="146" width="36" height="7" rx="3.5" fill="#B9A8EF"/>
+  <rect x="294" y="162" width="44" height="12" rx="6" fill="#4527A0"/>
+  <rect x="378" y="132" width="76" height="56" rx="12" fill="#F6F3FE"/>
+  <rect x="390" y="146" width="32" height="7" rx="3.5" fill="#B9A8EF"/>
+  <rect x="390" y="162" width="40" height="12" rx="6" fill="#4527A0"/>
+
+  <!-- line chart -->
+  <rect x="186" y="202" width="180" height="138" rx="14" fill="#FBFAFE" stroke="#ECE7FB"/>
+  <path d="M200 312 L230 290 L258 298 L288 262 L316 272 L350 234 L350 326 L200 326 Z" fill="url(#area)"/>
+  <path d="M200 312 L230 290 L258 298 L288 262 L316 272 L350 234" stroke="#4527A0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="350" cy="234" r="5" fill="#FFFFFF" stroke="#4527A0" stroke-width="3"/>
+
+  <!-- bar chart -->
+  <rect x="378" y="202" width="76" height="138" rx="14" fill="#FBFAFE" stroke="#ECE7FB"/>
+  <rect x="390" y="286" width="10" height="40" rx="5" fill="url(#bar)"/>
+  <rect x="406" y="260" width="10" height="66" rx="5" fill="url(#bar)"/>
+  <rect x="422" y="272" width="10" height="54" rx="5" fill="url(#bar)"/>
+  <rect x="438" y="240" width="10" height="86" rx="5" fill="url(#bar)"/>
+
+  <!-- floating card: approval -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="330" width="150" height="64" rx="16" fill="#FFFFFF"/>
+  </g>
+  <circle cx="410" cy="362" r="15" fill="#E3F4E8"/>
+  <path d="M403 362 L408 367 L417 357" stroke="#268941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="434" y="350" width="74" height="9" rx="4.5" fill="#1A1433"/>
+  <rect x="434" y="366" width="52" height="7" rx="3.5" fill="#B9A8EF"/>
+
+  <!-- floating card: users -->
+  <g filter="url(#shadow)">
+    <rect x="10" y="150" width="120" height="58" rx="16" fill="#FFFFFF"/>
+  </g>
+  <circle cx="36" cy="179" r="11" fill="#7B61D9"/>
+  <circle cx="52" cy="179" r="11" fill="#4527A0" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="68" cy="179" r="11" fill="#B9A8EF" stroke="#FFFFFF" stroke-width="2"/>
+  <rect x="86" y="174" width="30" height="10" rx="5" fill="#1A1433"/>
+</svg>
