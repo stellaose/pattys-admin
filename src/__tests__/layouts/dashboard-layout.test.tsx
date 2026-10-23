@@ -91,6 +91,20 @@ describe("DashboardLayout", () => {
       ).toBeInTheDocument();
     });
 
+    it("goes back only when the back button is clicked", async () => {
+      renderWithProviders(
+        <DashboardLayout title="Edit blog">
+          <p>Page content</p>
+        </DashboardLayout>,
+      );
+
+      await userEvent.click(screen.getByRole("heading", { name: "Edit blog" }));
+      expect(mockRouter.back).not.toHaveBeenCalled();
+
+      await userEvent.click(screen.getByRole("button", { name: "Go back" }));
+      expect(mockRouter.back).toHaveBeenCalledTimes(1);
+    });
+
     // Displays the admin's e-mail when no first or last name is available.
     it("falls back to the e-mail when the admin has no name", () => {
       resetStore({ isLoggedIn: true, user: { email: "ada@example.com" } });
