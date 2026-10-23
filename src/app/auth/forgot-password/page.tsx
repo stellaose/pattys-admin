@@ -6,23 +6,17 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { GoArrowLeft } from "react-icons/go";
 import { AuthLayout } from "#components/layouts";
 import { CustomInput, SubmitButton } from "#components/general";
-import { useAppDispatch } from "#store/hook";
-import { setAppKey } from "#/store/slice/app";
+import { useAuth } from "#/hooks";
 import { authBackLink, authLabel } from "#/styles/auth";
 import { emailRule } from "#/utils/messages";
 
 const ForgotPassword = () => {
   const router = useRouter();
-  const dispatch = useAppDispatch();
 
   const [form] = Form.useForm();
   const values = Form.useWatch([], form);
 
-  const onForgotPassword = ({ email }: { email: string }) => {
-    dispatch(setAppKey({ key: "isForgotPassword", value: true }));
-    dispatch(setAppKey({ key: "request", value: { email } }));
-    router.push("/auth/verify-otp");
-  };
+  const { onForgotPassword, postAuthResponse } = useAuth();
 
   return (
     <AuthLayout
@@ -56,6 +50,7 @@ const ForgotPassword = () => {
           title="Send code"
           bgVariant="secondary"
           className="!w-full mt-4"
+          loading={postAuthResponse.isLoading}
           disabled={!values?.email}
         />
 

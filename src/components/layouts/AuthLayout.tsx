@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { LuShieldCheck, LuFileText, LuUsers } from "react-icons/lu";
 import { Logo } from "#assets/images";
 import { AdminHero } from "#assets/svg";
+import { Float, Stagger, StaggerItem, fadeUp } from "#components/general";
 import {
   authBadge,
   authFeature,
@@ -58,37 +59,55 @@ export const AuthLayout: React.FC<{
 
       <div className="flex">
         <div className="w-[50vw] overflow-hidden max-2lg:hidden block pt-16 pb-4">
-          <div className="max-w-[420px] flex flex-col gap-4">
-            <span className={authBadge}>
+          <Stagger delay={0.6} className="max-w-[420px] flex flex-col gap-4">
+            <motion.span variants={fadeUp} className={authBadge}>
               <LuShieldCheck size={14} /> Admin console
-            </span>
-            <h1 className={authHeroTitle}>
+            </motion.span>
+            <motion.h1 variants={fadeUp} className={authHeroTitle}>
               Run the <span className="text-purple-200">community.</span>
-            </h1>
-            <p className={authHeroText}>
+            </motion.h1>
+            <motion.p variants={fadeUp} className={authHeroText}>
               Everything you need to keep Pattys thoughtful, safe and growing —
               all in one place.
-            </p>
-          </div>
+            </motion.p>
+          </Stagger>
 
-          <Image
-            src={AdminHero}
-            alt=""
-            loading="eager"
-            className="mt-6 w-full max-w-[380px] xxl:max-w-[460px] h-auto"
-          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.85, ease: [0.26, 1, 0.4, 1] }}
+          >
+            <Float>
+              <Image
+                src={AdminHero}
+                alt=""
+                loading="eager"
+                className="mt-6 w-full max-w-[380px] xxl:max-w-[460px] h-auto"
+              />
+            </Float>
+          </motion.div>
 
-          <div className="flex max-w-[560px] justify-between gap-6 mt-8">
+          <Stagger
+            delay={1.05}
+            stagger={0.12}
+            className="flex max-w-[560px] justify-between gap-6 mt-8"
+          >
             {features.map((feature) => (
-              <div key={feature.title} className={authFeature}>
-                <div className={authFeatureIcon}>{feature.icon}</div>
+              <StaggerItem key={feature.title} className={authFeature}>
+                <motion.div
+                  className={authFeatureIcon}
+                  whileHover={{ y: -4, rotate: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
+                  {feature.icon}
+                </motion.div>
                 <div className="flex flex-col gap-1">
                   <p className={authFeatureTitle}>{feature.title}</p>
                   <p className={authFeatureText}>{feature.text}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
 
         <div className={authForm}>
@@ -103,16 +122,31 @@ export const AuthLayout: React.FC<{
             }}
           >
             <div className={authFormBody}>
-              {(title || headline || description) && (
-                <div className="mb-8 mt-14">
-                  {title && <p className={authFormTitle}>{title}</p>}
-                  {headline && <h3 className={authFormHeadline}>{headline}</h3>}
-                  {description && (
-                    <p className={authFormSubheading}>{description}</p>
-                  )}
-                </div>
-              )}
-              {children}
+              <Stagger delay={0.45}>
+                {(title || headline || description) && (
+                  <div className="mb-8 mt-14">
+                    {title && (
+                      <motion.p variants={fadeUp} className={authFormTitle}>
+                        {title}
+                      </motion.p>
+                    )}
+                    {headline && (
+                      <motion.h3 variants={fadeUp} className={authFormHeadline}>
+                        {headline}
+                      </motion.h3>
+                    )}
+                    {description && (
+                      <motion.p
+                        variants={fadeUp}
+                        className={authFormSubheading}
+                      >
+                        {description}
+                      </motion.p>
+                    )}
+                  </div>
+                )}
+                <StaggerItem>{children}</StaggerItem>
+              </Stagger>
             </div>
           </motion.div>
         </div>

@@ -1,0 +1,6 @@
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- blogs: tilted stacked pages with text lines (orange) -->
+  <rect x="148" y="56" width="92" height="112" rx="10" transform="rotate(-12 148 56)" fill="#FDEBE3" fill-opacity="0.7"/>
+  <rect x="116" y="78" width="92" height="112" rx="10" transform="rotate(-4 116 78)" fill="#FDEBE3" fill-opacity="0.9"/>
+  <path d="M132 100 H190 M131 114 H180 M130 128 H186" stroke="#F4B59A" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round" transform="rotate(-4 116 78)"/>
+</svg>

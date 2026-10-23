@@ -159,3 +159,38 @@ h6 {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+.stat-card-bg {
+  background-image: url("../assets/svg/stat-card-bg.svg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 220px auto;
+}
+
+/* each total card has its own illustration and colour; they override the default above */
+.stat-card-bg.stat-card-bg-users {
+  background-image: url("../assets/svg/stat-card-bg-users.svg");
+}
+.stat-card-bg.stat-card-bg-blogs {
+  background-image: url("../assets/svg/stat-card-bg-blogs.svg");
+}
+.stat-card-bg.stat-card-bg-visits {
+  background-image: url("../assets/svg/stat-card-bg-visits.svg");
+}
+.stat-card-bg.stat-card-bg-comments {
+  background-image: url("../assets/svg/stat-card-bg-comments.svg");
+}
+
+/* Recharts makes charts focusable for keyboard navigation; only show the ring for keyboard focus */
+.recharts-wrapper:focus,
+.recharts-surface:focus,
+.recharts-wrapper *:focus {
+  outline: none;
+}
+
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus-visible {
+  outline: 2px solid var(--color-purple-200);
+  outline-offset: 4px;
+  border-radius: 8px;
+}

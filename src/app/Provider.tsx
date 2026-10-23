@@ -4,6 +4,7 @@
 "use client";
 
 import { Provider } from "react-redux";
+import { MotionConfig } from "framer-motion";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "#/store";
 import { useEffect, useState } from "react";
@@ -20,17 +21,19 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   if (!isClient) {
     return (
-      <Provider store={store}>
-        {children}
-      </Provider>
+      <MotionConfig reducedMotion="user">
+        <Provider store={store}>{children}</Provider>
+      </MotionConfig>
     );
   }
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={<Loader />} persistor={persistor}>
-        {children}
-      </PersistGate>
-    </Provider>
+    <MotionConfig reducedMotion="user">
+      <Provider store={store}>
+        <PersistGate loading={<Loader />} persistor={persistor}>
+          {children}
+        </PersistGate>
+      </Provider>
+    </MotionConfig>
   );
 }

@@ -1,0 +1,8 @@
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- comments: two speech bubbles (blue) -->
+  <path d="M150 62 h56 a14 14 0 0 1 14 14 v30 a14 14 0 0 1 -14 14 h-30 l-16 14 v-14 h-10 a14 14 0 0 1 -14 -14 v-30 a14 14 0 0 1 14 -14 z" fill="#E3EEFB" fill-opacity="0.9"/>
+  <path d="M112 96 h44 a12 12 0 0 1 12 12 v22 a12 12 0 0 1 -12 12 h-34 a12 12 0 0 1 -12 -12 v-22 a12 12 0 0 1 12 -12 z" fill="#E3EEFB" fill-opacity="0.6"/>
+  <circle cx="166" cy="91" r="3.5" fill="#9CC3EF"/>
+  <circle cx="180" cy="91" r="3.5" fill="#9CC3EF"/>
+  <circle cx="194" cy="91" r="3.5" fill="#9CC3EF"/>
+</svg>

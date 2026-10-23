@@ -40,3 +40,12 @@ export const authBackLink =
   "flex items-center justify-center gap-2 text-sm font-bold font-arial text-black-100 mt-8 cursor-pointer hover:underline";
 
 export const authHelperText = "text-sm text-grey-300 font-arial text-center";
+
+// ? Two-column form rows (same as the blog's signup)
+export const signupFormBody =
+  "flex xl:flex-row 2lg:flex-col sm:flex-row flex-col justify-between items-center";
+
+export const inputText = "xl:w-12/25 2lg:w-full sm:w-12/25 w-full";
+
+export const authPhoneLabel =
+  "flex gap-1 items-center text-sm font-bold font-lora";

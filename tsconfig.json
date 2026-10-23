@@ -62,6 +62,9 @@
       "#utils/*": [
         "./src/utils/*"
       ],
+      "#test/*": [
+        "./test/*"
+      ]
     }
   },
   "include": [

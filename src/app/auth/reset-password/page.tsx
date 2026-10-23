@@ -5,28 +5,20 @@ import { useRouter } from "next/navigation";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { GoArrowLeft } from "react-icons/go";
 import { AuthLayout } from "#components/layouts";
-import { CustomInput, SubmitButton, useNotify } from "#components/general";
-import { useAppDispatch } from "#store/hook";
-import { setAppKey } from "#/store/slice/app";
+import { CustomInput, SubmitButton } from "#components/general";
+import { useAuth } from "#/hooks";
 import { authBackLink, authLabel } from "#/styles/auth";
 import { confirmPasswordRule, passwordRule } from "#/utils/messages";
 
 const ResetPassword = () => {
   const router = useRouter();
-  const dispatch = useAppDispatch();
-  const { Notify } = useNotify();
 
   const [form] = Form.useForm();
   const values = Form.useWatch([], form);
 
   const isFormInvalid = !values?.password || !values?.confirm_password;
 
-  const onResetPassword = () => {
-    dispatch(setAppKey({ key: "isForgotPassword", value: false }));
-    dispatch(setAppKey({ key: "request", value: undefined }));
-    Notify("Your password has been reset. Log in to continue.", true);
-    router.replace("/auth/login");
-  };
+  const { onResetPassword, postAuthResponse } = useAuth();
 
   return (
     <AuthLayout
@@ -76,6 +68,7 @@ const ResetPassword = () => {
           title="Reset password"
           bgVariant="secondary"
           className="!w-full mt-4"
+          loading={postAuthResponse.isLoading}
           disabled={isFormInvalid}
         />
 

@@ -1,0 +1,7 @@
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- visits: ripples spreading from a point (green) -->
+  <circle cx="204" cy="124" r="20" fill="#E2F4EC"/>
+  <circle cx="204" cy="124" r="42" stroke="#93D2B5" stroke-opacity="0.55" stroke-width="1.5"/>
+  <circle cx="204" cy="124" r="66" stroke="#93D2B5" stroke-opacity="0.4" stroke-width="1.5"/>
+  <circle cx="204" cy="124" r="92" stroke="#93D2B5" stroke-opacity="0.25" stroke-width="1.5"/>
+</svg>
