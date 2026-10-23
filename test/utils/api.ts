@@ -20,7 +20,17 @@ export const mockApi = (routes: Record<string, MockResponse>) => {
     .mockImplementation(
       async (input: RequestInfo | URL, init?: RequestInit) => {
         const request = new Request(input, init);
-        const path = request.url.replace(BASE_URL, "");
+        const requestUrl = new URL(request.url);
+        const basePath = BASE_URL
+          ? new URL(BASE_URL).pathname.replace(/\/$/, "")
+          : "";
+        const pathName =
+          basePath &&
+          (requestUrl.pathname === basePath ||
+            requestUrl.pathname.startsWith(`${basePath}/`))
+            ? requestUrl.pathname.slice(basePath.length) || "/"
+            : requestUrl.pathname;
+        const path = `${pathName}${requestUrl.search}`;
         const text = await request.clone().text();
 
         calls.push({

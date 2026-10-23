@@ -12,7 +12,6 @@ import {
 } from "react-icons/lu";
 export const PROD = "development" as "development" | "production";
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-// export const BASE_URL = "https://pattys-blog-backend.onrender.com/api/v1";
 
 export const FORM_METHODS = {
   POST: "POST",
