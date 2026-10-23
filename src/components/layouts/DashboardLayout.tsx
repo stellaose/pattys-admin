@@ -237,6 +237,16 @@ export const DashboardLayout: React.FC<{
             >
               <LuMenu size={22} />
             </button>
+            {pageTitle !== "Overview" && (
+              <button
+                type="button"
+                className="text-black-200 cursor-pointer"
+                onClick={() => router.back()}
+                aria-label="Go back"
+              >
+                <FaAngleLeft aria-hidden="true" />
+              </button>
+            )}
             <AnimatePresence mode="wait" initial={false}>
               <motion.h1
                 key={pageTitle}
@@ -245,10 +255,7 @@ export const DashboardLayout: React.FC<{
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.2, ease: easeOut }}
-                onClick={() => router.back()}
               >
-                {pageTitle !== "Overview" && <FaAngleLeft />}
-
                 {pageTitle}
               </motion.h1>
             </AnimatePresence>
