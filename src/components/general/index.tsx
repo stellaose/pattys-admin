@@ -5,3 +5,4 @@ export * from "./CustomTextArea";
 export * from "./Loader";
 export * from "./Button";
 export * from "./Notification";
+export * from "./Motion";

@@ -1,5 +1,12 @@
 import { ThemeConfig } from "antd";
 
+// Same values as --color-green / --color-red / --color-yellow in theme.css
+export const chartColors = {
+  green: "#268941",
+  red: "#d32f2f",
+  yellow: "#fbbc05",
+};
+
 export const getThemeConfig = (): ThemeConfig | undefined => {
   return {
     token: {

@@ -1,0 +1,7 @@
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- users: overlapping circles, like people in a group (purple) -->
+  <circle cx="196" cy="128" r="62" fill="#ECE7FB" fill-opacity="0.75"/>
+  <circle cx="150" cy="146" r="40" fill="#ECE7FB" fill-opacity="0.55"/>
+  <circle cx="206" cy="46" r="22" fill="#ECE7FB" fill-opacity="0.6"/>
+  <path d="M56 140 C106 118 148 128 220 80" stroke="#B9A8EF" stroke-opacity="0.45" stroke-width="1.5"/>
+</svg>
