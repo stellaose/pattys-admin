@@ -31,13 +31,14 @@ import {
   sidebarLogo,
   sidebarLogoText,
   sidebarLogout,
-  sidebarOverlay,
   sidebarMark,
+  sidebarOverlay,
   sidebarToggle,
 } from "#/styles/dashboard";
 import { isActive } from "#/utils";
 import { dashboardNav } from "#/config";
 import { FaAngleLeft } from "react-icons/fa";
+import Favicon from "#assets/images/favicon.ico";
 
 const SIDEBAR_COLLAPSED_KEY = "pattys-admin:sidebar-collapsed";
 
@@ -120,30 +121,32 @@ export const DashboardLayout: React.FC<{
         id="dashboard-sidebar"
         className={`${sidebar} w-[260px] flex flex-col transition-[width,translate] duration-300 lg:translate-x-0 ${isCollapsed ? "lg:w-[80px]" : ""} ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <div
-          className={`${sidebarLogo} ${isCollapsed ? "lg:justify-center lg:px-0" : ""}`}
-        >
-          <Image
-            src={Logo}
-            alt="Pattys"
-            className={`h-8 w-auto ${collapsedHidden}`}
-            loading="eager"
-          />
-          <span className={`${sidebarLogoText} ${collapsedHidden}`}>Admin</span>
-          {isCollapsed && (
-            <span className={`${sidebarMark} max-lg:hidden`} aria-hidden>
-              P
-            </span>
-          )}
-          <button
-            type="button"
-            className="ml-auto text-black-200 lg:hidden cursor-pointer"
-            onClick={() => setIsSidebarOpen(false)}
-            aria-label="Close menu"
+        {isCollapsed ? (
+          <Image src={Favicon} alt="" className={`w-3 h-auto flex justify-self-center self-center mt-8 mb-10 ${sidebarMark}`} />
+        ) : (
+          <div
+            className={`${sidebarLogo} ${isCollapsed ? "lg:justify-center lg:px-0" : ""}`}
           >
-            <LuX size={20} />
-          </button>
-        </div>
+            <Image
+              src={Logo}
+              alt="Pattys"
+              className={`h-8 w-auto ${collapsedHidden}`}
+              loading="eager"
+            />
+            <span className={`${sidebarLogoText} ${collapsedHidden}`}>
+              Admin
+            </span>
+
+            <button
+              type="button"
+              className="ml-auto text-black-200 lg:hidden cursor-pointer mt-4"
+              onClick={() => setIsSidebarOpen(false)}
+              aria-label="Close menu"
+            >
+              <LuX size={20} />
+            </button>
+          </div>
+        )}
 
         <button
           type="button"
